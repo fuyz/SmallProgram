@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<view class="container log-list">
+<p>this is a p in login pages!!!</p>
+<span>i am a span</span>  
+  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>
