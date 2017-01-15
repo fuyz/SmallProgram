@@ -1,0 +1,22 @@
+/* pages/info/info.wxss */
+
+
+b{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.userInfo li{
+    display: block;
+     font-size: 15px;
+}
+.info-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+   font-size: 15px;
+}
+.info-item {
+  margin: 5px;
+}

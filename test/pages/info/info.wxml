@@ -1,0 +1,12 @@
+<!--info.wxml-->
+<view class="info-list">
+    <b>个人主页</b>
+    <ul class="userInfo">
+        <li>姓名：付颖志</li>
+        <li>性别：男</li>
+        <li>职业：web前端工程师</li>
+    </ul>   
+    <block wx:for="{{arr1}}" wx:for-item="item" wx:key="*this">
+      <text class="info-item">{{index + 1}}. {{item}}</text>
+    </block>
+</view>

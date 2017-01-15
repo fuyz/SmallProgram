@@ -6,6 +6,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
+  onShow: function() {
+  // Do something when show.
+    console.log('显示');
+  },
+  onHide: function() {
+  // Do something when hide.
+    console.log('隐藏');
+  },
   getUserInfo:function(cb){
     var that = this
     if(this.globalData.userInfo){

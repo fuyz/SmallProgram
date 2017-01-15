@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
-var app = getApp()
+var app = getApp();
+console.info(app);
+
 Page({
   data: {
     motto: 'Hello World',
@@ -11,7 +13,7 @@ Page({
   bindViewTap: function() {
     console.log('登陆成功！！！');
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../info/info'
     })
   },
   onLoad: function () {
