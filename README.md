@@ -34,8 +34,9 @@ pages:   js 逻辑层 配置
     
 注意：Page()首字母大写。
 
-Page()里面的 object 参数说明
-    属性  类型  描述
+Page()里面的 object 参数说明：
+
+    属性  类型  描述
     data  Object  页面的初始数据
     onLoad  Function  生命周期函数--监听页面加载
     onReady  Function  生命周期函数--监听页面初次渲染完成
@@ -46,6 +47,7 @@ Page()里面的 object 参数说明
     其他 任意方法   Function/ object  开发者可以添加任意的函数或数据到 object参数中，用 this 可以访问可以点击触发。
     
 1.data  初始化数据 属性：
+
     初始化数据将作为页面的第一次渲染。data 将会以 JSON 的形式由逻辑层传至渲染层，所以其数据必须是可以转成 JSON 的格式：字符串，数字，布尔值，对象，数组。
     
 说明 ：data 属性里面传入对象用于绑定数据，在视图层显示。有点类似 angualrjs 里面的$scope ，但是有些区别。 如下：
@@ -75,6 +77,7 @@ Page()里面的 object 参数说明
     setData 函数用于将数据从逻辑层发送到视图层，同时改变对应的 this.data 的值。
     
 注意：
+
     1.直接修改 this.data 无效，无法改变页面的状态，还会造成数据不一致。
     2.单次设置的数据不能超过 1024kB，请尽量避免一次设置过多的数据。
     viewTap: function() {
@@ -207,8 +210,7 @@ Page()里面的 object 参数说明
     
     2.include方法：会忽略template定义的模板 ，直接引入，相当于把模板里面的内容部分复制到我们的页面；
     
-    3.import  的作用域：
-    
+    3.import  的作用域：  
         import 有作用域的概念，即只会 import 目标文件中定义的 template，而不会 import 目标文件import 的 template。
         如：C import B，B import A，在 C 中可以使用 B 定义的 template，在 B 中可以使用 A 定义的 template，但是 C 不能使用 A 定义的 template。
         
