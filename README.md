@@ -20,8 +20,7 @@ AppID:
     tabBar      Object    否    设置底部 tab 菜单
     networkTimeout  Object  否  设置网络超时时间
     debug       Boolean   否  设置是否开启 debug 模式
-    。
-   ..............
+   ..........................
    
  更多详细配置请参照：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html?t=2017112
 
@@ -48,6 +47,7 @@ Page()里面的 object 参数说明
 1.data  初始化数据 属性：
     初始化数据将作为页面的第一次渲染。data 将会以 JSON 的形式由逻辑层传至渲染层，所以其数据必须是可以转成 JSON 的格式：字符串，数字，布尔值，对象，数组。
 说明 ：data 属性里面传入对象用于绑定数据，在视图层显示。有点类似 angualrjs 里面的$scope ，但是有些区别。 如下：
+
     Page({
         data: {
             text: 'init data',
