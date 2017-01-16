@@ -2,8 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-     "pages/info/info",
-      "pages/grammar/grammar"
+    "pages/info/info",
+    "pages/grammar/grammar",
+    "pages/template/template"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -36,10 +37,10 @@
         "selectedIconPath":"images/news_selected.png"
       },
        {
-        "pagePath":"pages/info/info",
-        "text":"我",
-        "iconPath":"images/mine.png",
-        "selectedIconPath":"images/mine_selected.png"
+        "pagePath":"pages/template/template",
+        "text":"模板",
+        "iconPath":"images/news.png",
+        "selectedIconPath":"images/news_selected.png"
       }
     ]
   },

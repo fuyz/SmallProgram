@@ -18,4 +18,12 @@
 
 .usermotto {
   margin-top: 200px;
+} 
+.user-motto{
+  font-size: 22px;
+
+}
+
+p{
+  display: block;
 }

@@ -3,11 +3,15 @@
 var app = getApp();
 console.info(app);
 
+var T = new Date();
+T = T.toLocaleTimeString();
+console.log(T)
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    p:"我是通过js创建p标签"
+    name: "付颖志",
+    time: 00
   },
   //事件处理函数
   bindViewTap: function() {
@@ -23,7 +27,8 @@ Page({
     app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        userInfo:userInfo
+        userInfo:userInfo,
+        time: T
       })
     })
   }

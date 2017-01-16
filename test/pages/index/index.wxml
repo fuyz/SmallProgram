@@ -7,11 +7,9 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
     
-    <p>this is a p tag!!!</p>  
+    <p>作者：{{name}}</p>  
  
-    <p>{{p}}</p>
-
-    <span>i am a span</span>
+    <p>时间：{{time}}</p>
 
   </view>
 </view>
