@@ -1,3 +1,12 @@
+<import src='../template/header.wxml' />
+<import src='../template/footer.wxml' />
+
+ <template is="header" data='{{header}}'></template>
+
+<include src='../nav/nav.wxml' />
+<template is='nav' data='{{navTitle}}'></template>
+
+
 <view class="grammarWrapper">
   <view>
     <b>数学运算</b>
@@ -39,3 +48,5 @@
 
   </view>
 </view>
+
+ <template is="footer" data="{{footer}}"></template>

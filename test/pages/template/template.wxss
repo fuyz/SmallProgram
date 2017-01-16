@@ -1,1 +1,38 @@
 /* pages/template/template.wxss */
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #aaa;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #aaa;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navWrapper{
+    display: block;
+    margin-top: 50px;
+    
+}
+
+.nav{
+     margin-top: 50px;
+    text-align: center;
+     background: cyan;
+}
+.nav p{
+    display: inline-block;
+    padding: 10px;
+}
+

@@ -1,0 +1,21 @@
+
+<template name='nav'>
+    <!--<text class=''>{{navTitle}}</text>-->
+    <view class='nav'>
+        <p>头条</p>
+        <p>要闻</p>
+        <p>娱乐</p>
+        <p>体育</p>
+        <p>NBA</p>
+    </view>  
+      <p>我是通过import方法引用进来的</p>
+</template>
+
+<view  class='navWrapper'>
+    <p>我是通过include方法引用进来的</p>
+</view>
+
+
+<!--include引入外部的模板的时候  忽略了template定义的模板    直接引入相当于把模板里面的内容复制到我们的页面
+
+import 引入 只会引入目标文件中定义的 template   要通过template is="header"这样的方式使用模板，该外部模板传入数据的时候得得 绑定到data="{{item}}"-->

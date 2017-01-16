@@ -1,6 +1,10 @@
 // pages/template/template.js
 Page({
-  data:{},
+  data:{
+    header: "头部",
+    footer: "底部",
+    navTitle: "导航栏"
+  },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },

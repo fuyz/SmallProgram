@@ -7,6 +7,8 @@ Page({
         flag: true,
         length: 22,
         score: 89,
+        header: "基本语法",
+        footer: "版权为个人所有@http://github.com/fuyz",
 
         people:[
             {name:'张三',age:12},
