@@ -4,11 +4,9 @@
                                                                                                        --- 张小龙
 触手可得，不用安装 
 
-微信小程序开发工具：
-   https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=2017112
+微信小程序开发工具： https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=2017112
   
-AppID:  
-   https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=688810615
+AppID:  https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=688810615
 
 
 
@@ -28,9 +26,12 @@ AppID:
 二、逻辑层：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/?t=2017112
 
 微信小程序 pages  逻辑层 .js 
+
 pages:   js 逻辑层 配置
+
     逻辑层使用 Page() 函数用来注册一个页面。接受一个 object 参数，其指定
     页面的初始数据、生命周期函数、事件处理函数等。
+    
 注意：Page()首字母大写。
 
 Page()里面的 object 参数说明
@@ -45,8 +46,8 @@ Page()里面的 object 参数说明
     其他 任意方法   Function/ object  开发者可以添加任意的函数或数据到 object参数中，用 this 可以访问可以点击触发。
     
 1.data  初始化数据 属性：
-
     初始化数据将作为页面的第一次渲染。data 将会以 JSON 的形式由逻辑层传至渲染层，所以其数据必须是可以转成 JSON 的格式：字符串，数字，布尔值，对象，数组。
+    
 说明 ：data 属性里面传入对象用于绑定数据，在视图层显示。有点类似 angualrjs 里面的$scope ，但是有些区别。 如下：
 
     Page({
@@ -96,6 +97,7 @@ Page()里面的 object 参数说明
              message: 'Hello MINA!'
         }
     })
+    
  组件属性( 需要在双引号之内)
  
     <view id="item-{{id}}"> </view>
@@ -104,6 +106,7 @@ Page()里面的 object 参数说明
             id: 0
         }
     })
+    
  控制属性( 需要在双引号之内)
  
     <view wx:if="{{condition}}"> </view>
@@ -131,14 +134,17 @@ Page()里面的 object 参数说明
  block wx:if
 因为 wx:if 是一个控制属性，需要将它添加到一个标签上。但是如果我们想一次性判断多个组件标签，
 我们可以使用一个 <block/> 标签将多个组件包装起来，并在上边使用 wx:if 控制属性。
+
     <block wx:if="{{true}}">
         <view> view1 </view>
         <view> view2 </view>
     </block>
+    
 注意： <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
  
  
 3.列表循环
+
   wx:for
 在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该 组件。
 默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item:
@@ -173,6 +179,7 @@ Page()里面的 object 参数说明
  
  
 4.template模板：
+
    模板 WXML  提供模板（template ） ，可以在模板中定义代码片段，然后在不同的地方调用：
 
     1)使用当前页面的模板：直接定义并使用
@@ -195,11 +202,13 @@ Page()里面的 object 参数说明
     <template is='nav' ></template>
 
 注意：
+
     1.import方法：只引入目标文件中定义的 template部分， 通过  template is="模板名"   的方式使用模板，当外部模板传入数据的时候得绑定到data="{{item}}";
     
     2.include方法：会忽略template定义的模板 ，直接引入，相当于把模板里面的内容部分复制到我们的页面；
     
     3.import  的作用域：
+    
         import 有作用域的概念，即只会 import 目标文件中定义的 template，而不会 import 目标文件import 的 template。
         如：C import B，B import A，在 C 中可以使用 B 定义的 template，在 B 中可以使用 A 定义的 template，但是 C 不能使用 A 定义的 template。
         
