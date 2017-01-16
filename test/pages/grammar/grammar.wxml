@@ -1,0 +1,41 @@
+<view class="grammarWrapper">
+  <view>
+    <b>数学运算</b>
+    <span>a:{{a}}</span> 
+    <span>b:{{b}}</span> 
+    <span>a+b={{a+b}}</span> 
+  </view>
+  <view>
+    <b>判断语句</b>
+    <span wx:if="{{flag==true}}">flag为true时显示</span> 
+    <span wx:if="{{length > 10}}">length大于10时显示</span> 
+    <text wx:if="{{score >= 90}}">优秀</text>
+    <text wx:elif="{{score >= 80}}">良好</text>
+    <text wx:elif="{{score >= 70}}">中等</text>
+    <text wx:elif="{{score >= 60}}">及格</text>
+    <text wx:else="{{score < 60}}">不及格</text>
+  </view>
+  <view>
+    <b>循环语句</b>
+    <!--循环语句里:
+           数组：index代表索引；item代表元素；
+           对象：index代表key值；item代表value；
+    -->
+    <block wx:for="{{people}}" wx:for-index="i" wx:for-item="item">
+      <span> {{i+1}}.姓名：{{item.name}},年龄：{{item.age}}</span> 
+    </block>
+
+    <block wx:for="{{listObj}}">
+      <span>{{index}}:{{item}}</span> 
+    </block>
+
+    <!--循环嵌套-->
+    <block wx:for="{{news}}" >
+        <text class="source">{{item.source}}</text>
+        <text wx:for="{{item.list}}" wx:for-index="key" wx:for-item="val">
+            {{val.title}}-----------({{val.time}})
+        </text>
+    </block>
+
+  </view>
+</view>

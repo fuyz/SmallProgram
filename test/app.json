@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-     "pages/info/info"
+     "pages/info/info",
+      "pages/grammar/grammar"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -25,6 +26,12 @@
       {
         "pagePath":"pages/logs/logs",
         "text": "日志",
+        "iconPath":"images/news.png",
+        "selectedIconPath":"images/news_selected.png"
+      },
+       {
+        "pagePath":"pages/grammar/grammar",
+        "text":"语法",
         "iconPath":"images/news.png",
         "selectedIconPath":"images/news_selected.png"
       },

@@ -8,7 +8,9 @@
     <text class="user-motto">{{motto}}</text>
     
     <p>this is a p tag!!!</p>  
+ 
     <p>{{p}}</p>
+
     <span>i am a span</span>
 
   </view>

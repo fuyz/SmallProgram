@@ -1,12 +1,14 @@
 <!--info.wxml-->
 <view class="info-list">
-    <b>个人主页</b>
+    <b bindtap="say">个人介绍</b>
     <ul class="userInfo">
-        <li>姓名：付颖志</li>
-        <li>性别：男</li>
-        <li>职业：web前端工程师</li>
+        <li>姓名：{{name}}</li>
+        <li>性别：{{sex}}</li>
+        <li>职业：{{job}}</li>
     </ul>   
     <block wx:for="{{arr1}}" wx:for-item="item" wx:key="*this">
       <text class="info-item">{{index + 1}}. {{item}}</text>
     </block>
 </view>
+
+<button id='nextBtn' bindtap="addSkill">下一位</button>

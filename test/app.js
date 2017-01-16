@@ -34,5 +34,9 @@ App({
   },
   globalData:{
     userInfo:null
+  },
+
+  fn:function(){
+    console.log("我是app.js里面的方法！！！")
   }
 })

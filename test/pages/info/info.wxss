@@ -5,6 +5,7 @@ b{
     font-size: 20px;
     font-weight: 900;
     text-align: center;
+    margin: 20px 0;
 }
 
 .userInfo li{
@@ -19,4 +20,9 @@ b{
 }
 .info-item {
   margin: 5px;
+}
+
+#nextBtn{
+  display: block;
+  background: darkcyan;
 }
