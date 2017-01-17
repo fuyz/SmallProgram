@@ -18,9 +18,33 @@ AppID:  https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=6888
     tabBar      Object    否    设置底部 tab 菜单
     networkTimeout  Object  否  设置网络超时时间
     debug       Boolean   否  设置是否开启 debug 模式
-   ..........................
+   
    
- 更多详细配置请参照：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html?t=2017112
+    微信小程 pages  页面启动顺序配置：
+    
+    app.json 配置文件 想把那个页面放在启动页面只需要把这个页面放在第一位
+        {
+            "pages":[
+                "pages/news/news",
+                "pages/index/index",
+                "pages/logs/logs"
+            ]
+        } 
+        
+        
+    utils  中自定义模块 module.exports：
+    
+    微信小程序中 中， utils  下面 个 一个 JavaScript  文件中定义的变量、函数，都只在这个文件内部有效。当需要从此 JS 文件外部引用这些变量、函数时，必须使用 exports 对象进行暴露。使用者要用 require()命令引用这个 JS 文件。
+        module.exports = {
+            formatTime: formatTime
+        }
+        var Api = require('../../utils/api.js')    
+        
+        
+        
+   ..........................
+   
+    更多详细配置请参照：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html?t=2017112
 
 
 二、逻辑层：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/app-service/?t=2017112
@@ -247,8 +271,7 @@ Page()里面的 object 参数说明：
     </view>
         
       
- 事件对象：
-  
+ 事件对象：  
   如无特殊说明，当组件触发事件时，逻辑层绑定该事件的处理函数会收到一个事件对象。
 
         <button bindtap="changeText" data-id='123456'> 点击执行 changeText 方法 </button>
@@ -270,8 +293,67 @@ Page()里面的 object 参数说明：
         detail  Object  额外的信息
         
         
+
+
+request  数据请求：
+            wx.request({
+                url: 'http://www.phonegap100.com/appapi.php?a=getPortalCate',
+                data: {
+                    id: '11' ,
+                    name: '222'
+                },
+                header: {
+                    'Content-Type': 'application/json'
+                },
+                success: function(res) {
+                    console.log(res.data.result)
+                    _that.setData({
+                        list:res.data.result,
+                        text:'12345'
+                    });
+                }
+            })
+            
+        Api 接口
+        获取文章分类
+        http://www.phonegap100.com/appapi.php?a=getPortalCate
+        获取文章列表 http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1
+        获取文章详情 http://www.phonegap100.com/appapi.php?a=getPortalArticle&aid=121
+
+request POST  数据 提交：
+      
+      微信 小程序 post  提交数据
+        wx.request({
+            url: 'http://www.57lehuo.com/upload.php',
+            method:"POST",
+            data: {
+                username: '张三 1111' ,
+                age: '222'
+            },
+            header: {
+                'Content-Type': 'application/json'
+            },
+            success: function(res) {
+                console.log(res.data)
+            }
+        })
         
-        
+    Php  后端 接收数据：
+
+    注意 ：收 后端程序接收 POST  数据的 几种方式 ，这里我们采用的是  接收 JSON  数据的方 式 ，因为 小程序默认就是 post 的 的 json  数据 。
+        <?php
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: X-Requested-With');
+            $postData=file_get_contents('php://input', true);
+            $d=json_decode($postData);
+            $name=$d->username;
+            $age=$d->age;
+            $str.='姓名'.$name."\r\n";
+            $str.='年龄'.$age."\r\n";
+            echo $str;
+            file_put_contents('upload_test/upload.txt', $str);
+        ?>
+       
         
         
         
