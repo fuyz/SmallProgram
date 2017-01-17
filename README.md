@@ -298,14 +298,17 @@ Page()里面的 object 参数说明：
 request  数据请求：
 
             wx.request({
+            
                 url: 'http://www.phonegap100.com/appapi.php?a=getPortalCate',
                 data: {
                     id: '11' ,
                     name: '222'
                 },
+                
                 header: {
                     'Content-Type': 'application/json'
                 },
+                
                 success: function(res) {
                     console.log(res.data.result)
                     _that.setData({
@@ -313,6 +316,7 @@ request  数据请求：
                         text:'12345'
                     });
                 }
+                
             })
             
         Api 接口
