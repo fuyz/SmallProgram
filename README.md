@@ -296,6 +296,7 @@ Page()里面的 object 参数说明：
 
 
 request  数据请求：
+
             wx.request({
                 url: 'http://www.phonegap100.com/appapi.php?a=getPortalCate',
                 data: {
@@ -315,14 +316,17 @@ request  数据请求：
             })
             
         Api 接口
-        获取文章分类
-        http://www.phonegap100.com/appapi.php?a=getPortalCate
-        获取文章列表 http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1
-        获取文章详情 http://www.phonegap100.com/appapi.php?a=getPortalArticle&aid=121
+        
+            获取文章分类 http://www.phonegap100.com/appapi.php?a=getPortalCate
+            获取文章列表 http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1
+            获取文章详情 http://www.phonegap100.com/appapi.php?a=getPortalArticle&aid=121
+
+
 
 request POST  数据 提交：
       
       微信 小程序 post  提交数据
+      
         wx.request({
             url: 'http://www.57lehuo.com/upload.php',
             method:"POST",
