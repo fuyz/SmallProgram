@@ -218,11 +218,56 @@ Page()里面的 object 参数说明：
         
         
         
+5.事件：
+  
+ 事件分类 ：事件分为冒泡事件和非冒泡事件：
+  
+    冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。
+    非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。      
         
+      
+事件绑定：
+  
+    事件绑定的写法同组件的属性，以 key、value 的形式。
+    key 以 bind 或 catch 开头，然后跟上事件的类型，如 bindtap, catchtouchstart
+    
+        value 是一个字符串，需要在对应的 Page 中定义同名的函数。不然当触发事件的时候会报错。
+        bind 事件绑定不会阻止冒泡事件向上冒泡，catch 事件绑定可以阻止冒泡事件向上冒泡。
         
+    如在下边这个例子中， 点击 inner view 会先后触发 handleTap3 和 handleTap2(因为 tap 事件会冒泡到 middle view，而 middle view 阻止了 tap 事件冒泡，不再向父节点传递)，点击 middle view 会触发 handleTap2，点击 outter view 会触发 handleTap1。
+
+    <view id="outter" bindtap="handleTap1">
+        outer view
+        <view id="middle" catchtap="handleTap2">
+            middle view
+            <view id="inner" bindtap="handleTap3">
+                inner view
+            </view>
+        </view>
+    </view>
         
-        
-        
+      
+ 事件对象：
+  
+  如无特殊说明，当组件触发事件时，逻辑层绑定该事件的处理函数会收到一个事件对象。
+
+        <button bindtap="changeText" data-id='123456'> 点击执行 changeText 方法 </button>
+
+        changeText: function(e) {
+            console.log(e);
+            this.setData({
+            text: 'changed data'
+        })
+    
+    事件对象的属性列表：
+    
+        属性  类型  说明
+        type  String  事件类型
+        timeStamp  Integer  事件生成时的时间戳
+        target  Object  触发事件的组件的一些属性值集合
+        currentTarget  Object  当前组件的一些属性值集合
+        touches  Array  触摸事件，触摸点信息的数组
+        detail  Object  额外的信息
         
         
         
