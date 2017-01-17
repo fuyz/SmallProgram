@@ -11,4 +11,4 @@
     </block>
 </view>
 
-<button id='nextBtn' bindtap="addSkill">下一位</button>
+<button id='nextBtn' data-mag='哈哈哈' bindtap="addSkill">下一位</button>

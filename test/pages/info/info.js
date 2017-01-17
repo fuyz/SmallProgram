@@ -34,7 +34,10 @@ Page({
     console.log('hello ,我将调用app.js里面的方法---》')
     app.fn();
   },
-  addSkill: function(){
+  addSkill: function(event){
+
+    console.log(event)
+
     //通过setData来变data对象信息，并从新渲染页面
     this.setData({
       name: "Lucifer",

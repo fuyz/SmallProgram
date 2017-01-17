@@ -1,3 +1,6 @@
 {
-      "navigationBarTitleText": "小程序语法"
+      "navigationBarTitleText": "小程序语法",
+      "navigationBarBackgroundColor": "#000",
+      "navigationBarTextStyle": "blue"
+     
 }

@@ -10,7 +10,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "微信",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+     "backgroundColor": "#aaa"
   },
    "tabBar":{
     "color":"#000",
