@@ -3,9 +3,16 @@
 .title{
     width:100%;
     display: block;
-    text-align: center;      
+    text-align: center; 
+    padding: 10px;
+    background: red;     
 }
 
 #outter,#middle,#inner{
     padding: 10px;
+}
+
+.item{
+    padding: 5px 30px;
+    font-size: 14px;
 }

@@ -15,3 +15,15 @@
             </view>
     </view>
 </view>
+
+
+<view>
+    <text class='title'>数据请求</text>
+    <view wx:for='{{list}}'>
+        <text>{{item.catid}} : {{item.catname}}</text>
+        <view class="item" wx:for='{{item.subcate}}'>
+            {{item.catid}}:{{item.catname}}
+        </view>
+    </view>
+</view>
+
