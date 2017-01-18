@@ -12,6 +12,8 @@ AppID:  https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=6888
 
 一、配置项列表 ：
 
+1.
+
     属性         类型     必填    描述
     pages       Array     是    设置页面路径， 每个新建的页面都得在里面配置
     window      Object    否    window 设置默认页面的窗口表现，用于设置小程序的状态栏、导航条、标题、窗口背景色。
@@ -20,9 +22,9 @@ AppID:  https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=6888
     debug       Boolean   否  设置是否开启 debug 模式
    
    
-    微信小程 pages  页面启动顺序配置：
+ 2.微信小程 pages  页面启动顺序配置：
     
-    app.json 配置文件 想把那个页面放在启动页面只需要把这个页面放在第一位
+        app.json 配置文件 想把那个页面放在启动页面只需要把这个页面放在第一位
         {
             "pages":[
                 "pages/news/news",
@@ -32,9 +34,10 @@ AppID:  https://mp.weixin.qq.com/wxopen/devprofile?action=get_profile&token=6888
         } 
         
         
-    utils  中自定义模块 module.exports：
+3.utils  中自定义模块 module.exports：
     
-    微信小程序中 中， utils  下面 个 一个 JavaScript  文件中定义的变量、函数，都只在这个文件内部有效。当需要从此 JS 文件外部引用这些变量、函数时，必须使用 exports 对象进行暴露。使用者要用 require()命令引用这个 JS 文件。
+    微信小程序中 中， utils 的 JavaScript  文件中定义的变量、函数，都只在这个文件内部有效。
+    当需要从此 JS 文件外部引用这些变量、函数时，必须使用 exports 对象进行暴露。使用者要用 require()命令引用这个 JS 文件。
         module.exports = {
             formatTime: formatTime
         }
@@ -115,7 +118,63 @@ Page()里面的 object 参数说明：
 
 三、视图层：https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/?t=2017112
 
-1.数据绑定：
+    
+        
+1.标签：
+
+     <div class="header">
+      这是一个头部
+    </div>
+    <p> 这是一个头部p标签</p>
+
+
+    1.使用以前的html 块标签的话， 我们需要把这些标签转换成块元素，但是官方不建议这样用
+
+    2.使用html 默认标签的时候 没法使用 id选择器
+
+    结论：我们建议布局的时候使用官方提供的的 标签   view  text
+
+        view相当于我们以前的div  块元素
+
+        text 文本标签  内联元素   除了文本节点以外的其他节点都无法长按选中
+
+        布局就用  view标签
+        
+        
+
+2.选择器：
+
+        .class
+        
+        #id  id选择器
+        
+        element
+        
+        element, element  分组选择器
+        
+        ::after
+        
+        ::before
+
+eg：
+        <view id="banner">
+            这是一个banner  
+        </view>
+
+        <view class="banner_rpx">
+                <img src="../../images/2.jpg" />
+        </view>
+
+
+ 在微信小程序中 使用图片的话不能用 html标签里面的的 img标签
+
+        <image src=""></image>
+
+        <view class="banner_rpx">
+                <image src="../../images/2.jpg"></image>
+        </view>   
+
+3.数据绑定：
  
   数据绑定使用 Mustache 语法（双大括号）将变量包起来，可以作用于：
   
@@ -146,7 +205,7 @@ Page()里面的 object 参数说明：
     
     
 
-2.条件渲染 wx:if wx:elif wx:else：
+4.条件渲染 wx:if wx:elif wx:else：
 
  wx:if
 在框架中，我们用 wx:if="{{condition}}" 来判断是否需要渲染该代码块：
@@ -171,7 +230,7 @@ Page()里面的 object 参数说明：
 注意： <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
  
  
-3.列表循环
+5.列表循环
 
   wx:for
 在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该 组件。
@@ -206,7 +265,7 @@ Page()里面的 object 参数说明：
   </view>
  
  
-4.template模板：
+6.template模板：
 
    模板 WXML  提供模板（template ） ，可以在模板中定义代码片段，然后在不同的地方调用：
 
@@ -242,7 +301,7 @@ Page()里面的 object 参数说明：
         
         
         
-5.事件：
+7.事件：
   
  事件分类 ：事件分为冒泡事件和非冒泡事件：
   
@@ -361,7 +420,4 @@ request POST  数据 提交：
             echo $str;
             file_put_contents('upload_test/upload.txt', $str);
         ?>
-       
-        
-        
-        
+   
