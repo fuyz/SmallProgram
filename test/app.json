@@ -1,10 +1,12 @@
 {
   "pages":[
+     "pages/event/event",
     "pages/index/index",
     "pages/logs/logs",
     "pages/info/info",
     "pages/grammar/grammar",
     "pages/template/template"
+   
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -40,6 +42,12 @@
        {
         "pagePath":"pages/template/template",
         "text":"模板",
+        "iconPath":"images/news.png",
+        "selectedIconPath":"images/news_selected.png"
+      },
+       {
+        "pagePath":"pages/event/event",
+        "text": "事件",
         "iconPath":"images/news.png",
         "selectedIconPath":"images/news_selected.png"
       }

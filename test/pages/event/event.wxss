@@ -1,0 +1,11 @@
+/* pages/event/event.wxss */
+
+.title{
+    width:100%;
+    display: block;
+    text-align: center;      
+}
+
+#outter,#middle,#inner{
+    padding: 10px;
+}
