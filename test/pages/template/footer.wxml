@@ -1,7 +1,0 @@
-
-
-<template name='footer'>
-    <view class='footer'>
-        <text>{{footer}}</text>
-    </view>    
-</template>
