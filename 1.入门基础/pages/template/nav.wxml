@@ -1,0 +1,11 @@
+
+<template name='nav'>
+    <view>
+        <p>头条</p>
+        <p>要闻</p>
+        <p>娱乐</p>
+        <p>体育</p>
+        <p>NBA</p>
+    </view>  
+</template>
+<view ></view>

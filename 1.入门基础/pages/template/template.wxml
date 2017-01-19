@@ -1,0 +1,21 @@
+<!--模板的内部调用-->
+
+<template name='header'>
+    <view class='header'>
+        <text>{{header}}</text>
+    </view>    
+</template>
+
+<template is='header' data='{{header}}'></template>
+
+
+<import src='../nav/nav.wxml' />
+<template is='nav' data='{{navTitle}}'></template>
+
+<template name='footer'>
+    <view class='footer'>
+        <text>{{footer}}</text>
+    </view>    
+</template>
+
+<template is='footer' data="{{footer}}"></template>

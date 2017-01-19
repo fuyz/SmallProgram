@@ -1,0 +1,12 @@
+{
+
+    "window": {
+      "navigationBarBackgroundColor": "#000",
+      "navigationBarTextStyle": "#fff",
+      "navigationBarTitleText": "组件",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": true
+    }
+
+}
