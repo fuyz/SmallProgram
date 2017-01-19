@@ -23,7 +23,7 @@ Page({
 
   getData:function(params){
 
-    const a = 'http://api.douban.com/v2/movie/'+ params.type ;
+    const a = 'http://api.douban.com/v2/movie/'+ params.type + '?count=5' ;
     console.info(a)
     const _this = this;
 

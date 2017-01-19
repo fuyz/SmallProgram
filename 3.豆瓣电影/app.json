@@ -3,7 +3,9 @@
 		"pages/index/index",
 		"pages/search/search",
 		"pages/mine/mine",
-		"pages/list/list"
+		"pages/list/list",
+		"pages/detail/detail"
+	
 
 	],
 

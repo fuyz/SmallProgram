@@ -17,7 +17,7 @@
 	</view>	
 
 	<view class="sort-wrapper">
-		<navigator wx:for="{{sortArr}}" url="../list/list?type={{item.type}}&name={{item.name}}" hover-class="none" >
+		<navigator wx:for="{{sortArr}}" url="../list/list?type={{item.type}}&name={{item.name}}" hover-class="none" wx:key="*this">
 			<view class="sort-list">
 				<text > {{item.name}} </text>			
 				<image style="" mode="" src="../../images/arrowright.png" binderror="" bindload=""></image>

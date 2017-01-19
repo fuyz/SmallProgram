@@ -2,14 +2,16 @@
 
 <view class="list-wrapper">
 	<text class="s-title">{{title}}</text>
+
 	<view class='s-list' wx:for="{{list}}" wx:key="*this">
-		<image class="list-l" style="" mode="" src="{{item.images.small}}" binderror="" bindload=""></image>	
-		<view class="list-c">
-			<text class='m-title'>{{item.title}}</text>
-			<text class="m-directors">导演：{{item.directors[0].name}}</text>
-			类型：<text class="m-genres" key="{{index}}" wx:for="{{item.genres}}" wx:key="*this">{{item}}</text>	
-		</view>
-		<view class="list-r">{{item.rating.average}}</view>
-		
+		<navigator class='s-list-nav' url="../detail/detail?id={{item.id}}" hover-class="red" >
+			<image class="list-l" style="" mode="" src="{{item.images.small}}" binderror="" bindload=""></image>	
+			<view class="list-c">
+				<text class='m-title'>{{item.title}}</text>
+				<text class="m-directors">导演：{{item.directors[0].name}}</text>
+				类型：<text class="m-genres" key="{{index}}" wx:for="{{item.genres}}" wx:key="*this">{{item}}</text>	
+			</view>
+			<view class="list-r">{{item.rating.average}}</view>
+		</navigator>	
 	</view>		
 </view>

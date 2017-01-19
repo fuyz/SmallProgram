@@ -8,7 +8,7 @@
 	background: #eee
 }
 
-.s-list{
+.s-list-nav{
 	display: flex;
 	margin: 10px ;
 	font-size: 30rpx;
@@ -19,7 +19,7 @@
 .list-l{
 	flex: 0 0 30%;
 }
-.s-list image{
+.s-list-nav image{
 	width: 150rpx;
 	height: 150rpx;	
 }
