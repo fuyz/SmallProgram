@@ -2,12 +2,18 @@
 Page({
   data:{
     list:[],
+    type: '',
     name: '',
-    title: 'loading...'
+    page: 1,
+    count: 10,
+    title: 'loading...',
+    hasMore: true,
+    loading: true,
   },
   onLoad:function(params){
     // 页面初始化 params为页面跳转所带来的参数
     console.log(params);
+    this.setData({type: params.type});
 
     wx.showNavigationBarLoading();/*显示导航条加载动画。*/
     wx.setNavigationBarTitle({
@@ -17,13 +23,14 @@ Page({
       }
     });
 
-    this.getData(params);
+    this.getData(this.data.type,this.data.page);
+    this.setData({isFirst: true});
 
   },
 
-  getData:function(params){
-
-    const a = 'http://api.douban.com/v2/movie/'+ params.type + '?count=5' ;
+  getData:function(type,page){
+    const count = this.data.count * page;
+    const a = 'http://api.douban.com/v2/movie/'+ type + '?count='+ count;
     console.info(a)
     const _this = this;
 
@@ -36,14 +43,26 @@ Page({
       },
       success: function(res) {
         console.log(res);
-        _this.setData({list: res.data.subjects,title: res.data.title});
-
+        if( !res.data.subjects ) {
+          _this.setData({title: '没有加载到数据！！！'})
+          return
+        };
+        if(res.data.subjects.length == count){
+          _this.setData({list: res.data.subjects, title: res.data.title, loading: false});
+        }else{
+          _this.setData({hasMore: false});
+        }
       },
       fail:function(err){
         console.log(err)
       }
-  })
+    })
+  },
 
- }
+  loadMore:function(){
+    this.data.page += 1;
+    this.getData(this.data.type,this.data.page);
+    
+  }
 
 })

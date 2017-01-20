@@ -5,6 +5,7 @@
 }
 .slide-image{
 	width: 100%;
+	height: 250px;
 }
 
 .title{
@@ -23,13 +24,14 @@
 
 .sort-list {
 	/*width: 100%;*/
-	background: #eee;
-	border: 1px solid #ddd;
+	background: #35495e;
+	border: 1px solid #fff;
+	color: #fff;
 	border-radius: 10px;
 	height: 45px;
 	line-height: 45px;
-	margin: 10px 5px;
-	padding: 0 10px;
+	margin: 5px 5px;
+	padding: 0 15px;
 	box-sizing: border-box;
 	font-size: 15px;
 	cursor: pointer;
@@ -46,4 +48,7 @@
 	height: 20px;
 	margin-top: 10px;
 	float: right;
+	border-radius: 50%;
+	background: #fff;
+	padding: 2px ;
 }

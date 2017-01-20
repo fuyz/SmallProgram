@@ -3,7 +3,8 @@ var getData = require("../../utils/ajax.js");
 
 Page({
   data:{
-    detailData: {}
+    detailData: {},
+    castNameArr: []
   },
   onLoad:function(options){
     
@@ -11,9 +12,30 @@ Page({
 
     var _this = this;
 
+    wx.showNavigationBarLoading();/*显示导航条加载动画。*/
+    wx.setNavigationBarTitle({
+      title: "详情 << 电影 << 豆瓣",
+      success:function(){
+        wx.hideNavigationBarLoading();/*隐藏导航条加载动画。*/
+      }
+    });
+
     getData.ajax(options.id).then(function(res){
       console.info(res);
       _this.setData({detailData: res.data});
+
+      //处理数据：
+      function getChineseName(arr){
+        var newArr = [];
+        arr.forEach(function(ele,i){
+          newArr.push(ele.split(' ')[0]);
+          _this.setData({castNameArr: newArr})
+        })
+      }
+
+      getChineseName(_this.data.detailData.attrs.cast);
+      
+
     })
 
 

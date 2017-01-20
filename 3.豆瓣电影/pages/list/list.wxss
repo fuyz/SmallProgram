@@ -1,5 +1,9 @@
 /* pages/mine/mine.wxss */
 
+.scroll{
+	height: 500px;
+}
+
 .s-title{
 	width: 100%;
 	display: block;
@@ -41,4 +45,18 @@
 }
 .m-genres{
 	padding-left: 5px;
+}
+
+
+.loadImg image{
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.tips {
+	font-size: 13px;
+	color: #999;
+	text-align: center;
+	margin-bottom: 20px;
 }
