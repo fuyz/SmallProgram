@@ -3,6 +3,6 @@
 	<input type="text" name="" placeholder="请输入搜索关键字" autofocus="true" bindconfirm='search'/>
 	<image class="searchIcon" src='../../images/search.png'></image>	
 </view>
-<view class="noInfo" wx:if="{{showTip}}">{{title}}</view>
+<view class="noInfo" wx:if="{{topTip}}">{{title}}</view>
 <import src='../../template/movieList.wxml' />
 <template is='movieList' data='{{list,title,hasMore,loading,showTip}}'></template>

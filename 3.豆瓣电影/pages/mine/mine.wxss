@@ -1,1 +1,11 @@
 /* pages/mine/mine.wxss */
+
+.my{
+	display: flex;
+
+}
+.me{
+	margin: 50px auto;
+	width: 90%;
+	height: 320px;
+}

@@ -1,2 +1,5 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+
+<view class="my">
+	<image class="me" src='../../images/fyz.jpg'></image>
+</view>

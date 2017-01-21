@@ -12,6 +12,7 @@ Page({
   hasMore: true,
   loading: false,
   showTip: false,
+  topTip: false,
 
   searchWord: ''
 },
@@ -33,13 +34,13 @@ onLoad:function(options){
 
   search:function(e){
     console.log(e);
-    this.setData({showTip: true,loading: true, searchWord: e.detail.value})
+    this.setData({topTip: true,showTip:true,loading: true, searchWord: e.detail.value})
 
     this.requestData({q:e.detail.value, page: this.data.page, count: this.data.count});
 
   },
   loadMore:function(){
-    this.setData({showTip: true,loading: true});
+    this.setData({showTip: true,loading: true,hasMore:true});
     this.data.page += 1;
     this.data.count =  this.data.page * 10;
     this.requestData({q: this.data.searchWord, page: this.data.page, count: this.data.count});
@@ -51,7 +52,10 @@ onLoad:function(options){
     getData.ajax(obj).then(function(res){
     console.log(res);
     if(res.data.subjects.length == 0){
-      _this.setData({title: '没有该相关信息！！！',showTip: false,loading: false})
+      _this.setData({list: '',title: '没有该相关信息！！！',showTip: false,loading: false})
+    }else if(res.data.subjects.length < _this.data.count){
+      console.log(111);
+      _this.setData({list: res.data.subjects, title: res.data.title, showTip: false, loading: false, hasMore: false});
     }else{
       _this.setData({list: res.data.subjects, title: res.data.title,showTip: false,loading: false});
     }
