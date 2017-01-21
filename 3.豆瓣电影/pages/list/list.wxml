@@ -3,31 +3,8 @@
 
 	<text class="s-title">{{title}}</text>
 
-	<scroll-view class='scroll' scroll-y="true" bindscrolltolower="loadMore" >
-		<view class='s-list' wx:for="{{list}}" wx:key="this">
-			<navigator class='s-list-nav' url="../detail/detail?id={{item.id}}" hover-class="red" >
-				<image class="list-l" style="" mode="" src="{{item.images.small}}" binderror="" bindload=""></image>	
-				<view class="list-c">
-					<text class='m-title'>{{item.title}}</text>
-					<text class="m-directors">导演：{{item.directors[0].name}}</text>
-					类型：<text class="m-genres" key="{{index}}" wx:for="{{item.genres}}" wx:key="*this">{{item}}</text>	
-				</view>
-				<view class="list-r">{{item.rating.average}}</view>
-			</navigator>	
-		</view>		
-
-		<view class="tips" wx:if="{{!loading}}">
-			<view class="loadImg" wx:if="{{hasMore}}">
-				<text>玩了命的加载中...</text>
-				<image  src="../../images/loading.gif" mode="aspectFill"/>
-			</view>
-			<view wx:else>
-				<text>没有更多内容了</text>
-			</view>
-		</view>
-	</scroll-view>	
-
-	<loading hidden="{{!loading}}">加载中...</loading>
+	<import src='../../template/movieList.wxml' />
+	<template is='movieList' data='{{list,title,hasMore,loading,showTip}}'></template>
 
 </view>
 

@@ -16,14 +16,13 @@
 		<text class="title-d"> 最新、最热影视信息搜集 </text>				
 	</view>	
 
-	<view class="sort-wrapper">
+	<scroll-view scroll-y='true' class="sort-wrapper">
 		<navigator wx:for="{{sortArr}}" url="../list/list?type={{item.type}}&name={{item.name}}" hover-class="none" wx:key="*this">
 			<view class="sort-list">
 				<text > {{item.name}} </text>			
 				<image style="" mode="" src="../../images/arrowright.png" binderror="" bindload=""></image>
 			</view>
-		</navigator>	
-
-	</view>
+		</navigator>	   
+	</scroll-view>
 
 </view>		

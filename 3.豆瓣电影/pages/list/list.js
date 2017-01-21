@@ -1,14 +1,20 @@
 // pages/mine/mine.js
+
+var getData = require('../../utils/ajax.js');
+
 Page({
   data:{
     list:[],
+    title: 'loading...',
+    hasMore: true,
+    loading: true,
+    showTip: true,
+
     type: '',
     name: '',
     page: 1,
     count: 10,
-    title: 'loading...',
-    hasMore: true,
-    loading: true,
+
   },
   onLoad:function(params){
     // 页面初始化 params为页面跳转所带来的参数
@@ -23,46 +29,36 @@ Page({
       }
     });
 
-    this.getData(this.data.type,this.data.page);
-    this.setData({isFirst: true});
+    this.requestData({type: this.data.type, page: this.data.page, count: this.data.count});
 
-  },
-
-  getData:function(type,page){
-    const count = this.data.count * page;
-    const a = 'http://api.douban.com/v2/movie/'+ type + '?count='+ count;
-    console.info(a)
-    const _this = this;
-
-    wx.request({
-      url: a,
-      method: 'GET',
-      data: {},
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'/* 注意这个地方不是'application/json'  */
-      },
-      success: function(res) {
-        console.log(res);
-        if( !res.data.subjects ) {
-          _this.setData({title: '没有加载到数据！！！'})
-          return
-        };
-        if(res.data.subjects.length == count){
-          _this.setData({list: res.data.subjects, title: res.data.title, loading: false});
-        }else{
-          _this.setData({hasMore: false});
-        }
-      },
-      fail:function(err){
-        console.log(err)
-      }
-    })
   },
 
   loadMore:function(){
+    this.setData({loading: true});
     this.data.page += 1;
-    this.getData(this.data.type,this.data.page);
-    
+    this.data.count =  this.data.page * 10;
+    this.requestData({type: this.data.type, page: this.data.page, count: this.data.count});
+
+  },
+
+  requestData:function(obj){
+    var _this = this;
+
+    getData.ajax(obj).then(
+      function(res){
+        console.log(res);
+        if( !res.data.subjects ) {
+          _this.setData({title: '没有加载到数据！！！',hasMore: false, loading: false});
+          return
+        };
+        if(res.data.subjects.length == _this.data.count){
+          _this.setData({list: res.data.subjects, title: res.data.title, loading: false});
+        }else{
+          _this.setData({hasMore: false, loading: false});
+        }
+      }
+      );
+
   }
 
 })

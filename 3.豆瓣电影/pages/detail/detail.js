@@ -20,7 +20,7 @@ Page({
       }
     });
 
-    getData.ajax(options.id).then(function(res){
+    getData.ajax({id:options.id,q:''}).then(function(res){
       console.info(res);
       _this.setData({detailData: res.data});
 

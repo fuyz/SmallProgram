@@ -1,7 +1,21 @@
 // pages/search/search.js
+var getData = require("../../utils/ajax.js");
+
 Page({
-  data:{},
-  onLoad:function(options){
+ data:{
+  list:[],
+  type: '',
+  name: '',
+  page: 1,
+  count: 10,
+  title: 'loading...',
+  hasMore: true,
+  loading: false,
+  showTip: false,
+
+  searchWord: ''
+},
+onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady:function(){
@@ -15,5 +29,30 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  }
+  },
+
+  search:function(e){
+    console.log(e);
+    this.setData({showTip: true,loading: true, searchWord: e.detail.value})
+
+    this.requestData({q:e.detail.value, page: this.data.page, count: this.data.count});
+
+  },
+  loadMore:function(){
+    this.setData({loading: true});
+    this.data.page += 1;
+    this.data.count =  this.data.page * 10;
+    this.requestData({q: this.data.searchWord, page: this.data.page, count: this.data.count});
+
+  },
+
+  requestData:function(obj){
+   var _this = this;
+   getData.ajax(obj).then(function(res){
+    console.log(res);
+    _this.setData({list: res.data.subjects, title: res.data.title,showTip: false,loading: false});
+  });
+
+ }
+
 })

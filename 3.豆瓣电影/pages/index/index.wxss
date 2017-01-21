@@ -22,6 +22,9 @@
 	display: block; 
 }
 
+.sort-wrapper{
+	height: 250px;
+}
 .sort-list {
 	/*width: 100%;*/
 	background: #35495e;
