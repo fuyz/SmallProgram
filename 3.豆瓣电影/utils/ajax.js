@@ -4,7 +4,7 @@ var ajax = function(obj){
 	var requestUrl = '';
 	if(obj.q){   
 		//电影搜索页
-		requestUrl = 'http://api.douban.com/v2/movie/search?q='+ obj.q;
+		requestUrl = 'http://api.douban.com/v2/movie/search?q='+ obj.q +'&count='+ obj.count;
 	}else if(obj.count){  
 		//电影列表页
 		requestUrl = 'http://api.douban.com/v2/movie/'+ obj.type + '?count='+ obj.count;

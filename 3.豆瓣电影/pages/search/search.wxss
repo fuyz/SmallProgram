@@ -18,11 +18,11 @@
 	left: 20px;
 }
 
-scroll{
+.scroll{
 	height: 500px;
 }
 
-.s-title{
+.noInfo{
 	width: 100%;
 	display: block;
 	text-align: center;

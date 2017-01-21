@@ -39,7 +39,7 @@ onLoad:function(options){
 
   },
   loadMore:function(){
-    this.setData({loading: true});
+    this.setData({showTip: true,loading: true});
     this.data.page += 1;
     this.data.count =  this.data.page * 10;
     this.requestData({q: this.data.searchWord, page: this.data.page, count: this.data.count});
@@ -47,10 +47,14 @@ onLoad:function(options){
   },
 
   requestData:function(obj){
-   var _this = this;
-   getData.ajax(obj).then(function(res){
+    var _this = this;
+    getData.ajax(obj).then(function(res){
     console.log(res);
-    _this.setData({list: res.data.subjects, title: res.data.title,showTip: false,loading: false});
+    if(res.data.subjects.length == 0){
+      _this.setData({title: '没有该相关信息！！！',showTip: false,loading: false})
+    }else{
+      _this.setData({list: res.data.subjects, title: res.data.title,showTip: false,loading: false});
+    }
   });
 
  }
