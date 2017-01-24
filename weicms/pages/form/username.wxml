@@ -1,0 +1,4 @@
+  <view class="section section_gap">
+    <view class="section__title">姓名:</view>
+    <input name="username" placeholder="请输入您的姓名" />
+  </view>

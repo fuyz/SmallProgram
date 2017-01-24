@@ -1,0 +1,32 @@
+.warp {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx;
+    font-size: 16px;
+}
+.title {
+    text-align: center;
+    padding: 20rpx;
+    font-size: 20px;
+}
+.cTime {
+    color: #aaa;
+}
+.img {
+    text-align: center;
+    padding: 20rpx;
+}
+.img image {
+    width: 120px;
+    height: 120px;
+}
+.content {
+    text-indent: 2em;
+}
+.close {
+    text-align: center;
+    margin: 30px;
+    font-size: 20px;
+    color: #aaa
+}

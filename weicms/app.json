@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/lists/lists",
+    "pages/detail/detail",
+    "pages/aboutme/aboutme",
+    "pages/form/form",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeiCMS",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/lists/lists",
+      "text": "首页",
+      "iconPath":"images/1.png",
+      "selectedIconPath":"images/2.png"
+    }, 
+    {
+      "pagePath": "pages/aboutme/aboutme",      
+      "text": "关于我们",
+      "iconPath":"images/3.png",
+      "selectedIconPath":"images/4.png"
+    },
+    {
+      "pagePath": "pages/form/form",      
+      "text": "用户反馈",
+      "iconPath":"images/3.png",
+      "selectedIconPath":"images/4.png"
+    }    
+    ]
+  }  
+}

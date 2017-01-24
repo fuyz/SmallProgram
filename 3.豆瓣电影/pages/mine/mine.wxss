@@ -2,10 +2,16 @@
 
 .my{
 	display: flex;
-
+	flex-direction: column;
+	text-align: center;
+	margin: 20px;
+}
+.my text{
+	font-size: 20px;
+	font-weight: 900;
 }
 .me{
-	margin: 50px auto;
+	margin: 30px auto;
 	width: 90%;
 	height: 320px;
 }
