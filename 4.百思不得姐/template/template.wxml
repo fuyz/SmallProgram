@@ -1,0 +1,50 @@
+<!-- /用户信息模板/ -->
+<template name='user'>
+	<view class="user">
+		<view class="u-l">
+			<image style="" mode="" src="{{item.u.header[0]}}" binderror="" bindload=""></image>
+		</view>
+		<view class="u-r">
+			<text class="u-name">{{item.u.name}}</text>
+			<text class="u-time">{{item.passtime}}</text>
+		</view>
+	</view>
+</template>
+<!-- 图片模板 -->
+<template name='pic'>
+	<view class="imgWrapper" wx:if='{{item.image}}'>
+		<image style="" mode="" src="{{item.image.thumbnail_small[0]}}" binderror="" bindload=""></image>
+	</view>
+</template>
+
+<template name='music'></template>
+<!-- 视频模板 -->
+<template name='video'>
+	<view class="videoWrapper" wx:if='{{item.video}}'>
+		<video src="{{item.video.video[0]}}"   controls ></video>
+	</view>
+</template>
+<!-- 点赞评论模板 -->
+<template name='detail'>
+	<view class="detail-list">
+		<view class="detail-item">
+			<image style="" mode="" src="../../images/good.png" ></image>{{item.up}}
+		</view>
+		<view class="detail-item">
+			<image style="" mode="" src="../../images/bad.png" ></image>{{item.down}}
+		</view>
+		<view class="detail-item">
+			<image style="" mode="" src="../../images/share.png" ></image>{{item.forward}}
+		</view>
+		<view class="detail-item">
+			<image style="" mode="" src="../../images/comment.png" ></image>{{item.comment}}
+		</view>
+	</view>
+</template>
+<!-- 热评论模板 -->
+<template name='top-comment'>
+	<view class="c-wrapper" wx:for="{{item.top_comments}}" wx:key='this'>
+		<text class="name">{{item.u.name}}</text>
+		<text class="tx">：{{item.content}}</text>
+	</view>
+</template>

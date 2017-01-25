@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<import  src='../../template/template.wxml'></import>
+
+<view class="container">
+
+	<scroll-view class="topNav" scroll-x="true" >		
+		<view class="navItem  {{currentIndex==index ? 'active':''}}" wx:for="{{topTabItems}}" wx:indec='index' wx:key="this" data-id='{{index}}' bindtap='switchTo'>{{item}}</view>
+	</scroll-view >
+
+	<swiper  class='swiper' bindchange='bindchange' current='{{currentIndex}}'>
+		<!-- /推荐/ -->
+		<swiper-item>
+			<scroll-view class="scrollView" scroll-y='true' >
+				<view class="contentWrapper" wx:for='{{comment_data}}' wx:key='this'>
+					<template is='user' data='{{item}}'></template>
+					<view class="text">{{item.text}}</view>
+					<template is='video' data='{{item}}'></template>
+					<template is='pic' data='{{item}}'></template>
+					<template is='detail' data='{{item}}'></template>
+					<template is='top-comment' data='{{item}}'></template>
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<!-- /视频/ -->
+		<swiper-item class='swiper-item'>
+			<scroll-view class="scrollView" scroll-y='true' >
+				<view class="contentWrapper" wx:for='{{video_data}}' wx:key='this'>
+					<template is='user' data='{{item}}'></template>
+					<view class="text">{{item.text}}</view>
+					<template is='video' data='{{item}}'></template>
+					<template is='detail' data='{{item}}'></template>
+					<template is='top-comment' data='{{item}}'></template>
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<!-- /图片/ -->
+		<swiper-item class='swiper-item'>
+			<scroll-view class="scrollView" scroll-y='true' >
+				<view class="contentWrapper" wx:for='{{pic_data}}' wx:key='this'>
+					<template is='user' data='{{item}}'></template>
+					<view class="text">{{item.text}}</view>
+					<template is='pic' data='{{item}}'></template>
+					<template is='detail' data='{{item}}'></template>
+					<template is='top-comment' data='{{item}}'></template>				
+				</view>
+			</scroll-view>
+		</swiper-item>
+		<!-- /段子/ -->
+		<swiper-item class='swiper-item'>
+			<scroll-view class="scrollView" scroll-y='true' >
+				<view class="contentWrapper" wx:for='{{dz_data}}' wx:key='this'>
+					<template is='user' data='{{item}}'></template>
+					<view class="text">{{item.text}}</view>
+					<template is='detail' data='{{item}}'></template>
+					<template is='top-comment' data='{{item}}'></template>
+				</view>
+			</scroll-view>
+		</swiper-item>
+
+	</swiper>	
+
+	<loading hidden='{{!loading}}'></loading>		
+</view>

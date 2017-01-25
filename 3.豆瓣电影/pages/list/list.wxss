@@ -21,11 +21,9 @@
 	border-bottom: 1px solid #ccc;
 }
 .list-l{
-	flex: 0 0 30%;
-}
-.s-list-nav image{
-	width: 150rpx;
-	height: 150rpx;	
+	flex: 0 0 20%;
+	padding: 0 10px;
+	height: 150rpx;
 }
 
 .list-c{
@@ -40,11 +38,18 @@
 	line-height:  150rpx;	
 	text-align: center;
 }
-.m-title,.m-directors{
+.m-title{
 	display: block;
+	font-size: 20px;
+	font-weight: 900;
+}
+.m-directors{
+	display: block;
+	color: #555;
 }
 .m-genres{
 	padding-left: 5px;
+	color: #555;
 }
 
 

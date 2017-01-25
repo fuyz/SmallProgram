@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/live/live",
+    "pages/me/me"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "rgb(255,45,85)",
+    "navigationBarTitleText": "百思不得姐",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+   "color": "#ccc",
+   "selectedColor": "rgb(255,45,85)",
+   "borderStyle": "white",
+   "backgroundColor": "#f9f9f9",
+   "list":[
+    {
+      "text":"糗事",
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-selected.png"
+    },
+    {
+      "text":"直播",
+      "pagePath": "pages/live/live",
+      "iconPath": "images/live.png",
+      "selectedIconPath": "images/live-selected.png"
+    },
+    {
+      "text":"我",
+      "pagePath": "pages/me/me",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me-selected.png"
+    }
+  ]
+ }
+}
