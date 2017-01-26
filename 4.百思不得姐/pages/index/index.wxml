@@ -36,13 +36,13 @@
 		<!-- /图片/ -->
 		<swiper-item class='swiper-item'>
 			<scroll-view class="scrollView" scroll-y='true' >
-				<view class="contentWrapper" wx:for='{{pic_data}}' wx:key='this'>
+				<navigator url='../detail/detail?id={{item.id}}&data={{item}}' open-type="navigate" class="contentWrapper" wx:for='{{pic_data}}' wx:key='this'>
 					<template is='user' data='{{item}}'></template>
 					<view class="text">{{item.text}}</view>
 					<template is='pic' data='{{item}}'></template>
 					<template is='detail' data='{{item}}'></template>
 					<template is='top-comment' data='{{item}}'></template>				
-				</view>
+				</navigator>
 			</scroll-view>
 		</swiper-item>
 		<!-- /段子/ -->
