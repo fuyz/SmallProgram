@@ -21,7 +21,7 @@
 <!-- 视频模板 -->
 <template name='video'>
 	<view class="videoWrapper" wx:if='{{item.video}}'>
-		<video src="{{item.video.video[0]}}"   controls ></video>
+		<video src="{{item.video.video[1]}}"   controls ></video>
 	</view>
 </template>
 <!-- 点赞评论模板 -->

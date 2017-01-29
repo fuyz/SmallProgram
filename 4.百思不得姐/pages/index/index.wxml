@@ -50,7 +50,8 @@
 			<scroll-view class="scrollView" scroll-y='true' >
 				<view class="contentWrapper" wx:for='{{dz_data}}' wx:key='this'>
 					<template is='user' data='{{item}}'></template>
-					<view class="text">{{item.text}}</view>
+					<view class="text {{upOrDown}} " >{{item.text}}</view>
+					<view class='showOrHidden'  bindtap='showOrHidden'>{{showOrHidden}}</view>
 					<template is='detail' data='{{item}}'></template>
 					<template is='top-comment' data='{{item}}'></template>
 				</view>

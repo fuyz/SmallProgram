@@ -108,3 +108,18 @@
 .c-wrapper .name{
 	color: rgb(3,75,120);
 }
+
+.showOrHidden{
+	color: blue;
+	font-size: 15px;
+	line-height: 20px;
+	margin: -5px 20px 10px;
+	font-weight: 800px;
+}
+[class*='up']{
+	max-height: 100px;
+	overflow: hidden;
+}
+.showOrHidden.down{
+	max-height: 100%;
+}

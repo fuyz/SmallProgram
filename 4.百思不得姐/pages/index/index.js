@@ -5,12 +5,12 @@ var app = getApp();
 var ajax = require('../../utils/ajax.js');
 
 var type = [
-    {'index':1,loaded:false},
-    {'index':41,loaded:false},
-    {'index':10,loaded:false},
-    {'index':29,loaded:false},
-    {'index':31,loaded:false}
-  ];
+{'index':1,loaded:false},
+{'index':41,loaded:false},
+{'index':10,loaded:false},
+{'index':29,loaded:false},
+{'index':31,loaded:false}
+];
 
 Page({
   data: {
@@ -20,7 +20,10 @@ Page({
     pic_data:[],
     dz_data:[],
     currentIndex: 0,
-    loading: true
+    loading: true,
+
+    upOrDown: 'up',
+    showOrHidden: '全文'
   },
 
   onLoad: function () {
@@ -98,7 +101,19 @@ Page({
       break;
     }
     return {dataType:dataType,isFirst:isFirst};
+  },
+
+  showOrHidden:function(e){
+    console.log(e)
+    var id = e.currentTarget.id;
+    if(this.data.upOrDown == 'up'){
+      this.setData({ 'upOrDown':'down',id: 'active','showOrHidden': '收起'});
+    }else{
+      this.setData({'upOrDown':'up','showOrHidden': '全文'});
+    }
   }
+
+
 
 
 })
