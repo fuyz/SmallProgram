@@ -9,7 +9,8 @@ var type = [
 {'index':41,loaded:false},
 {'index':10,loaded:false},
 {'index':29,loaded:false},
-{'index':31,loaded:false}
+{'index':31,loaded:false},
+{'index':44289,loaded:false}
 ];
 
 Page({
@@ -19,6 +20,8 @@ Page({
     video_data:[],
     pic_data:[],
     dz_data:[],
+    music_data:[],
+    yc_data:[],
     currentIndex: 0,
     loading: true,
 
@@ -65,6 +68,12 @@ Page({
           case 3:
           that.setData({dz_data: res.data.list,loading:false});
           break;
+          case 4:
+          that.setData({music_data: res.data.list,loading:false});
+          break;
+          case 5:
+          that.setData({yc_data: res.data.list,loading:false});
+          break;
           default:
           console.log('没有正确请求数据');
           break;
@@ -95,6 +104,14 @@ Page({
       case 3:
       dataType = type[3].index;
       type[3].loaded = true;
+      break;
+      case 4:
+      dataType = type[4].index;
+      type[4].loaded = true;
+      break;
+      case 5:
+      dataType = type[5].index;
+      type[5].loaded = true;
       break;
       default:
       console.log('未匹配到：'+e.detail.current);

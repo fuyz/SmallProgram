@@ -16,12 +16,16 @@
 		<image style="" mode="" src="{{item.image.thumbnail_small[0]}}" binderror="" bindload=""></image>
 	</view>
 </template>
-
-<template name='music'></template>
 <!-- 视频模板 -->
 <template name='video'>
 	<view class="videoWrapper" wx:if='{{item.video}}'>
 		<video src="{{item.video.video[1]}}"   controls ></video>
+	</view>
+</template>
+<!-- 音乐模板 -->
+<template name='music'>
+	<view class="musicWrapper" wx:if='{{item.audio}}'>
+		<audio src="{{item.audio.audio[0]}}"  poster='{{item.audio.thumbnail_small[0]}}' controls ></audio>
 	</view>
 </template>
 <!-- 点赞评论模板 -->

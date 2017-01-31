@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",    
-    "pages/live/live",
     "pages/me/me",
     "pages/detail/detail"   
   ],
@@ -22,12 +21,6 @@
       "pagePath": "pages/index/index",
       "iconPath": "images/home.png",
       "selectedIconPath": "images/home-selected.png"
-    },
-    {
-      "text":"直播",
-      "pagePath": "pages/live/live",
-      "iconPath": "images/live.png",
-      "selectedIconPath": "images/live-selected.png"
     },
     {
       "text":"我",

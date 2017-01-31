@@ -1,1 +1,12 @@
 /* pages/me/me.wxss */
+.wrapper{
+	text-align: center;
+	margin: 20px auto;
+}
+.wrapper image{
+	margin: 0 auto;
+}
+.wrapper text{
+	font-size: 14px;
+	display: block;	
+}

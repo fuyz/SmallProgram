@@ -1,2 +1,6 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view class="wrapper">	
+	<text>微信小程序</text>
+	<image style="width: 90%;" mode="" src="../../images/fyz.jpg" binderror="" bindload=""></image>	
+	<text>项目链接：https://github.com/fuyz/SmallProgram</text>
+</view>

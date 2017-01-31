@@ -82,6 +82,10 @@
 	width: 90%;
 }
 
+.musicWrapper{
+	text-align:center;
+}
+
 .detail-list{
 	text-align: center;
 	margin-bottom: 5px;
@@ -90,7 +94,7 @@
 	font-size: 13px;
 	color: #999;
 	display: inline-block;
-	margin: 0 15px;
+	margin: 0 10px;
 }
 .detail-item image{
 	width: 20px;
