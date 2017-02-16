@@ -1,0 +1,49 @@
+{
+	"pages":[
+		"pages/index/index",
+		"pages/search/search",
+		"pages/mine/mine",
+		"pages/list/list",
+		"pages/detail/detail"
+	
+
+	],
+
+	"window": {
+	    "navigationBarBackgroundColor": "#35495e",
+	    "navigationBarTextStyle": "white",
+	    "navigationBarTitleText": "电影 << 豆瓣",
+	    "backgroundColor": "#fff",
+	    "backgroundTextStyle": "dark",
+	    "enablePullDownRefresh": true
+		},
+
+	"tabBar": {
+	    "color": "#ccc",
+	    "selectedColor": "#35495e",
+	    "borderStyle": "white",
+	    "backgroundColor": "#f9f9f9",
+	    "list": [
+		      {
+		        "text": "榜单",
+		        "pagePath": "pages/index/index",
+		        "iconPath": "images/board.png",
+		        "selectedIconPath": "images/board-actived.png"
+		      },
+		      {
+		        "text": "搜索",
+		        "pagePath": "pages/search/search",
+		        "iconPath": "images/search.png",
+		        "selectedIconPath": "images/search-actived.png"
+		      },
+		      {
+		        "text": "我的",
+		        "pagePath": "pages/mine/mine",
+		        "iconPath": "images/profile.png",
+		        "selectedIconPath": "images/profile-actived.png"
+		      }
+	    ]
+  }
+
+
+}

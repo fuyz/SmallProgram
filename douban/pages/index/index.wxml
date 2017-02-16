@@ -1,0 +1,28 @@
+<!--pages/index/index.wxml-->
+<!-- <text>pages/index/index.wxml</text> -->
+
+<view class="container">
+	
+	<swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500" indicator-active-color="white">
+		<block wx:for="{{imageUrls}}" wx:key="*this" >
+			<swiper-item class="swiper-slide" >
+				<image src="{{item}}"  class="slide-image"  mode="withFix"/>
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<view class="title">
+		<text class="title-h"> 豆瓣电影榜单集合 </text>
+		<text class="title-d"> 最新、最热影视信息搜集 </text>				
+	</view>	
+
+	<scroll-view scroll-y='true' class="sort-wrapper">
+		<navigator wx:for="{{sortArr}}" url="../list/list?type={{item.type}}&name={{item.name}}" hover-class="none" wx:key="*this">
+			<view class="sort-list">
+				<text > {{item.name}} </text>			
+				<image style="" mode="" src="../../images/arrowright.png" binderror="" bindload=""></image>
+			</view>
+		</navigator>	   
+	</scroll-view>
+
+</view>		

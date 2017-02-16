@@ -1,0 +1,8 @@
+<!--pages/mine/mine.wxml-->
+
+<view class="my">
+	
+	<text >My WeChat</text>
+	<image class="me" src='../../images/fyz.jpg'></image>
+
+</view>

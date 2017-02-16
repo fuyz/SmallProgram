@@ -1,0 +1,50 @@
+/* pages/detail/detail.wxss */
+
+
+.poster{
+	margin: 5px auto;
+	width: 60%;
+	display: flex;
+	align-items: center;
+}
+.title{
+	text-align: center;
+	font-weight: 900;
+}
+.mainInfo{
+	margin: 10px 20px;
+	font-size: 13px;
+	color: #777;
+}
+.MI_tr{
+	padding: 2px 5px;
+}
+.MI_r{
+	margin-left: 10px;
+	line-height: 20px;
+}
+
+.detailInfo{
+	padding: 0 20px;
+}
+
+.summaryWrapper{
+	
+	padding: 10px 5px;
+	color: black;
+}
+.s_title{
+	font-size: 16px;
+	font-weight: 900;
+}
+.summary{
+	font-size: 13px;
+	text-indent: 2em;
+	line-height: 25px;
+}
+
+.detailInfo .MI_tr{
+	font-size: 13px;
+	padding: 2px;
+	margin: 10px;
+}

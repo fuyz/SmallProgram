@@ -1,0 +1,80 @@
+/* pages/search/search.wxss */
+
+.searchWrapper{
+	text-align: center;
+	padding:  5px 10px ;
+	position: relative;
+}
+.searchWrapper input{
+	border:1px solid #aaa;
+	border-radius: 10px;
+	padding: 5px;
+}
+.searchWrapper image{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+.scroll{
+	height: 500px;
+}
+
+.noInfo{
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	background: #eee
+}
+
+.s-list-nav{
+	display: flex;
+	margin: 10px ;
+	font-size: 30rpx;
+	box-sizing: border-box;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.list-l{
+	flex: 0 0 30%;
+}
+.s-list-nav image{
+	width: 150rpx;
+	height: 150rpx;	
+}
+
+.list-c{
+	flex: 0  0 60%;
+	padding-left: 10px;
+	line-height: 50rpx;
+	box-sizing: border-box;
+}
+.list-r{
+	flex: 0  0 10%;
+	color: red;
+	line-height:  150rpx;	
+	text-align: center;
+}
+.m-title,.m-directors{
+	display: block;
+}
+.m-genres{
+	padding-left: 5px;
+}
+
+
+.loadImg image{
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+.tips {
+	font-size: 13px;
+	color: #999;
+	text-align: center;
+	margin-bottom: 20px;
+}
